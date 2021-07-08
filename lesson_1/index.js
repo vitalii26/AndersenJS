@@ -1,4 +1,4 @@
-const checkToNumber = value => isFinite(value) && !isNaN(value) && value !== '' && value !== null;
+const checkToNumber = value => isFinite(value) && value !== '' && value !== null;
 const calcToNumberSystem = (number, base) => parseInt(number, 10).toString(base);
 
 const firstValue = prompt('Введите число', '');
@@ -16,7 +16,7 @@ const firstNum = prompt('Введите первое число', '');
 if (checkToNumber(firstNum)) {
     const secondNum = prompt('Введите второе число', '');
     if (checkToNumber(secondNum)) {
-        console.log(`Ответ: ${+firstNum + +secondNum}, ${Math.round(firstNum / secondNum)}`);
+        console.log(`Ответ: ${+firstNum + Number(secondNum)}, ${Math.round(firstNum / secondNum)}`);
     } else {
         console.log('Некорректный ввод!');
     }
