@@ -25,10 +25,4 @@ const isEmpty = (obj) => {
 };
 
 // 3
-const makePairs = (obj) => {
-  const pairs = [];
-
-  Object.keys(obj).forEach((ObjKey) => pairs.push([ObjKey, obj[ObjKey]]));
-
-  return pairs;
-};
+const makePairs = (obj) => Object.keys(obj).map((ObjKey) => [ObjKey, obj[ObjKey]]);
