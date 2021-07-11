@@ -1,3 +1,4 @@
+// 1
 const isEqual = (firstObj, secondObj) => {
   const firstObjKeys = Object.keys(firstObj);
   const secondObjKeys = Object.keys(secondObj);
@@ -5,23 +6,17 @@ const isEqual = (firstObj, secondObj) => {
   if (firstObjKeys.length !== secondObjKeys.length) {
     return false;
   }
-  
-  for (let key of firstObjKeys) {
-    if (firstObj[key] !== secondObj[key]) {
-      return false;
-    }
-  }
 
-  return true;
+  return firstObjKeys.every((key) => (firstObj[key] === secondObj[key]));
 };
 
-// 2
+//2
 const isEmpty = (obj) => {
   const objValues = Object.values(obj);
 
   if (
       objValues.length === 0 ||
-      objValues.every((i) => (!i && i !== 0 && i !== false))
+      objValues.every((objValue) => (!objValue && objValue !== 0 && objValue !== false))
     ) {
     return true;
   }
@@ -31,5 +26,9 @@ const isEmpty = (obj) => {
 
 // 3
 const makePairs = (obj) => {
-  return Object.entries(obj);
+  const pairs = [];
+
+  Object.keys(obj).forEach((ObjKey) => pairs.push([ObjKey, obj[ObjKey]]));
+
+  return pairs;
 };
