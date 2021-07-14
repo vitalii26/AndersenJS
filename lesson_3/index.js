@@ -15,19 +15,13 @@ function isPalindrome(str) {
 }
 
 function countVowelLetters(str) {
-  let vowelsCount = 0;
-
-  str.split('')
-    .forEach((symbol) => {
-      if (VOWEL_LETTERS.includes(symbol.toLowerCase())) {
-        vowelsCount++;
-      }
-  });
-
-  return vowelsCount;
+  return str.toLowerCase()
+    .split('')
+    .filter((symbol) => VOWEL_LETTERS.includes(symbol))
+    .length;
 }
 
-function myFilter(callbackFunc, thisArg = this) {
+Array.prototype.myFilter = function (callbackFunc, thisArg = this) {
   const filteredItems = [];
 
   thisArg.forEach((item, index, array) => {
@@ -38,6 +32,4 @@ function myFilter(callbackFunc, thisArg = this) {
 
   return filteredItems;
 }
-
-Array.prototype.myFilter = myFilter;
 
