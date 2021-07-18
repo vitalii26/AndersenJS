@@ -5,16 +5,17 @@ function createNestedObjectFromString(str) {
 function createDebounceFunction(callbackFunc, delay) {
   let timerId;
 
-  return function() {
+  return function(...args) {
     clearTimeout(timerId);
-    timerId = setTimeout(callbackFunc, delay);
+    timerId = setTimeout(() => callbackFunc.apply(this, args), delay);
   };
 }
 
 Function.prototype.myBind = function (thisArg, ...args) {
-  let targetFunc = this;
+  const targetFunc = this;
 
   return function (...boundFuncArgs) {
     targetFunc.apply(thisArg, [...args, ...boundFuncArgs]);
   };
 };
+
