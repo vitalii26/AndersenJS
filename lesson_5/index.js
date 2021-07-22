@@ -48,7 +48,7 @@
   Разница с первым варинтом будет в том, что в этом случае клик по кнопке button симулируется с помощью
   метода button.onClick(), который синхронно вызывает события. Он удалится из стека, только тогда,
   когда оба слушателя выполнятся. И соответственно только тогда стек полностью освободится и мы сможем
-  выполнить микрозадачи из очереди. Микрозадачи могут выполнятся меджу макрозадачами, когда наш стек пустой.
+  выполнить микрозадачи из очереди. Микрозадачи могут выполнятся меджу задачами, когда наш стек пустой.
   И они выплнятся все за раз после освобождения стека.
 
   Изначально наш script находится в стеке. Затем выполняется синхронный метод button.onClick(),
@@ -78,16 +78,14 @@ function fakeRequest(url) {
 
 function resolveUrlList(urlsArray) {
   const urlRequestResults = [];
-  let completedUrl = 0;
 
   return new Promise((res, rej) => {
-    urlsArray.forEach((url, urlIndex) => {
+    urlsArray.forEach((url) => {
       fakeRequest(url)
         .then((result) => {
-          urlRequestResults[urlIndex] = result;
-          completedUrl++;
+          urlRequestResults.push(result);
 
-          if (completedUrl === urlsArray.length) { 
+          if (urlRequestResults.length === urlsArray.length) { 
             res(urlRequestResults);
           }
         })
@@ -96,4 +94,4 @@ function resolveUrlList(urlsArray) {
   })
 }
 
-
+resolveUrlList(['aaa', 'bbb', 'ccc', 'ddd']).then(res => console.log(res));
