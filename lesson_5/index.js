@@ -94,4 +94,3 @@ function resolveUrlList(urlsArray) {
   })
 }
 
-resolveUrlList(['aaa', 'bbb', 'ccc', 'ddd']).then(res => console.log(res));
