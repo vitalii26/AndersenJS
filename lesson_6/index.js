@@ -22,7 +22,7 @@ function Admin(name) {
   this.isAdmin = true;
 
   this.getIsAdmin = function() {
-    return this.isAdmin ? 'Is Admin' : 'Isn`t admin';
+    return 'Is Admin';
   };
 }
 
@@ -34,12 +34,11 @@ function DefaultUser(name) {
 
   this.getName = function() {
     const name = parentGetName.call(this);
-    return name === '' ? 'UnknownUser' : name;
+    return name || 'UnknownUser';
   };
 
   this.addPost = function(title, text) {
     this.posts.push({ title, text });
-    return this;
   };
 }
 
@@ -71,7 +70,7 @@ AdminPr.prototype = Object.create(UserPr.prototype);
 AdminPr.prototype.constructor = AdminPr;
 
 AdminPr.prototype.getIsAdmin = function() {
-  return this.isAdmin ? 'Is Admin' : 'Isn`t admin';
+  return 'Is Admin';
 };
 
 function DefaultUserPr(name) {
@@ -84,13 +83,12 @@ DefaultUserPr.prototype.constructor = DefaultUserPr;
 
 DefaultUserPr.prototype.getName = function() {
   const name = UserPr.prototype.getName.call(this);
-  return name === '' ? 'UnknownUser' : name;
+  return name || 'UnknownUser';
 };
 
 
 DefaultUserPr.prototype.addPost = function(title, text) {
   this.posts.push({ title, text });
-  return this;
 };
 
 // Classes
@@ -121,7 +119,7 @@ class AdminCl extends UserCl {
   }
 
   getIsAdmin() {
-    return this.isAdmin ? 'IS ADMIN' : 'ISN`T ADMIN';
+    return 'IS ADMIN';
   }
 }
 
@@ -133,11 +131,10 @@ class DefaultUserCl extends UserCl {
 
   getName() {
     const name = super.getName();
-    return name === '' ? 'UnknownUser' : name;
+    return name || 'UnknownUser';
   }
 
   addPost(title, text) {
     this.posts.push({ title, text });
-    return this;
   }
 }
