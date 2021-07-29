@@ -1,12 +1,7 @@
 function fetchForecastForCity(cityName = 'Cherkasy') {
   return fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=e335f94b4f09c88c14240e7f6d84c61c`)
-    .then(response => {
-      if (response.status == 200) {
-        return response.json();
-      } else {
-        throw new Error(`Something get wrong with status ${response.status}.`);
-      }
-    });
+    .then((response) => response.json())
+    .catch((err) => console.log(err));
 }
 
 function consoleForecastForCity(forecastData) {
