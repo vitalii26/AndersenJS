@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Calculator JS</title>
+</head>
+<body>
+ <div class="calculator">
+     <div class="calculator__inner">
+        <div class="calculator__output">
+          <span data-previous-operand class="calculator__previous-operand"></span>
+          <span data-current-operand class="calculator__current-operand"></span>
+        </div>
+          <div class="calculator__buttons">
+            <button class="calculator__button double btn-green" data-calc="clear">AC</button>
+            <button class="calculator__button btn-green" data-calc="delete">DEL</button>
+            <button class="calculator__button" data-calc="operation">÷</button>
+            <button class="calculator__button" data-calc="1">1</button>
+            <button class="calculator__button" data-calc="2">2</button>
+            <button class="calculator__button" data-calc="3">3</button>
+            <button class="calculator__button" data-calc="operation">*</button>
+            <button class="calculator__button" data-calc="4">4</button>
+            <button class="calculator__button" data-calc="5">5</button>
+            <button class="calculator__button" data-calc="6">6</button>
+            <button class="calculator__button" data-calc="operation">+</button>
+            <button class="calculator__button" data-calc="7">7</button>
+            <button class="calculator__button" data-calc="8">8</button>
+            <button class="calculator__button" data-calc="9">9</button>
+            <button class="calculator__button" data-calc="operation">-</button>
+            <button class="calculator__button" data-calc=".">.</button>
+            <button class="calculator__button" data-calc="0">0</button>
+            <button class="calculator__button" data-calc="sign">&plusmn;</button>
+            <button class="calculator__button btn-green" data-calc="equals">=</button>
+          </div>
+          <div class="calculator__history">
+            <h3 class="calculator__history-title">
+              Calculator history:
+            </h3>
+          </div>
+        </div>
+     </div>
+ </div>
+ <script src="./index.js"></script>
+</body>
+</html>
