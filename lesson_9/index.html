@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>To Do List</title>
+</head>
+<body>
+  <div class="todo">
+    <div class="todo__inner">
+      <h1 class="todo__title">ToDo List</h1>
+      <form class="todo__form">
+        <input type="text" placeholder="Type new task..." class="todo__form-input">
+        <button class="todo__button todo__button_green">Add new task</button>
+      </form>
+      <div class="todo__statistic">
+        <span class="todo__statistic-text todo_total">Total Todos: 0</span>
+        <span class="todo__statistic-text todo_done">Completed Todos: 0</span>
+        <span class="todo__statistic-text todo_active">Active Todos: 0</span>
+      </div>
+      <ul class="todo__list">
+      </ul>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

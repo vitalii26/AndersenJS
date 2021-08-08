@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	font-family: 'Georama', sans-serif;
+ 	color: #5594e6;
+ 	font-size: 100%;
+ 	background-color: #0b438c;
+}
+
+.todo__inner {
+	background-color: #fff;
+	width: 100%;
+	max-width: 730px;
+	min-height: 100vh;
+	padding: 20px 15px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.todo__title {
+	margin-bottom: 15px;
+	font-style: italic;
+}
+
+.todo__form {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.todo__form-input {
+	margin-right: 20px;
+}
+
+.todo__form-input {
+	border: 1px solid #5594e6;
+	border-radius: 5px;
+	padding: 10px;
+	outline: none;
+	color: #5594e6;
+	transition: 0.2s ease;
+}
+
+.todo__form-input:focus {
+	border: 1px solid #5594e6;
+	box-shadow: 0px 0px 5px #5594e6;
+}
+
+.todo__form-input::placeholder {
+	color: #5594e6;
+}
+
+.todo__button {
+	border-radius: 5px;
+	padding: 10px;
+	transition: 0.2s ease;
+}
+
+.todo__statistic {
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.todo__list {
+	list-style: none;
+	width: 80%;
+}
+
+.todo__list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #5594e6;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
+	transition: 0.2s ease;
+}
+
+.todo__list-item:last-child {
+	margin-bottom: 0;
+}
+
+.todo__list-item:hover {
+	box-shadow: 0px 0px 5px #5594e6;
+	transform: translate(5px, -5px);
+}
+
+.todo__list-ckeckbox {
+	margin-right: 10px;
+}
+
+.todo__list-name {
+	font-style: italic;
+}
+
+.todo__list-ckeckbox:checked + .todo__list-name:hover {
+	cursor: not-allowed;
+}
+
+.todo__list-name:focus {
+	outline: none;
+}
+
+.todo__list-name:hover {
+	cursor: text;
+}
+
+.checked {
+	text-decoration: line-through;
+	color: #071c38;
+}
+
+.todo__button_red {
+	background-color: #fff;
+	border: 1px solid #ff1a1a;
+	color: #ff1a1a;
+}
+
+.todo__button_red:hover {
+	background-color: #ff1a1a;
+	color: #fff;
+	box-shadow: 0px 0px 5px #ff1a1a;
+}
+
+.todo__button_green {
+	background-color: #fff;
+	border: 1px solid #00b300;
+	color: #00b300;
+}
+
+.todo__button_green:hover {
+	background-color: #00b300;
+	color: #fff;
+	box-shadow: 0px 0px 5px #00b300;
+}
+
+@media (max-width: 576px) {
+	.todo__list {
+		width: 100%;
+	}
+
+	.todo__statistic {
+		display: flex;
+		width: 80%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.todo__statistic-text {
+		margin-bottom: 10px;
+	}
+
+	.todo__statistic-text:last-child {
+		margin-bottom: 0;
+	}
+
+	.todo__list-name {
+		font-size: 0.7rem;
+	}
+
+	.todo__button {
+		padding: 5px;
+		font-size: 0.7rem;
+	}
+}
